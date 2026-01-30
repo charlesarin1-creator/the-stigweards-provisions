@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Stigweard’s Provisions</title>
+  <meta name="description" content="Provisions for a life built with intention. Curated tools aligned with stewardship, restraint, and enduring utility." />
+  <style>
+    :root{
+      --charcoal:#1C1C1C;
+      --forest:#0A3B2E;
+      --gold:#C2A14D;
+      --parchment:#F5F3EE;
+      --stone:#E7E2D8;
+      --ink:#151515;
+      --muted:#4A4A4A;
+      --shadow: 0 16px 40px rgba(0,0,0,.10);
+      --radius: 18px;
+      --max: 1080px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      background:
+        radial-gradient(1200px 600px at 15% 0%, rgba(194,161,77,.14), transparent 60%),
+        radial-gradient(900px 500px at 85% 10%, rgba(10,59,46,.10), transparent 55%),
+        linear-gradient(180deg, #1c1c1c 0%, #2a2521 20%, var(--parchment) 62%, var(--parchment) 100%);
+      min-height:100vh;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{
+      padding:28px 0 8px;
+      display:flex; justify-content:space-between; align-items:center; gap:18px;
+      color:var(--parchment);
+    }
+    .mark{
+      display:flex; align-items:center; gap:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:700;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .seal{
+      width:40px; height:40px; border-radius:999px;
+      border:1px solid rgba(245,243,238,.45);
+      display:grid; place-items:center;
+      background: rgba(0,0,0,.16);
+    }
+    .seal svg{width:22px; height:22px; opacity:.92}
+    nav{
+      display:flex; gap:14px; flex-wrap:wrap;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:13px;
+      opacity:.92;
+    }
+    nav a{
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(245,243,238,.18);
+      background: rgba(0,0,0,.12);
+    }
+    nav a:hover{border-color:rgba(245,243,238,.34)}
+    .hero{
+      margin-top:14px;
+      padding:44px 0 30px;
+      color:var(--parchment);
+    }
+    .hero h1{
+      margin:0;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+    .hero p{
+      margin:14px 0 0;
+      max-width:62ch;
+      color:rgba(245,243,238,.88);
+      font-size:18px;
+      line-height:1.5;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .cta{
+      margin-top:22px;
+      display:flex; gap:12px; flex-wrap:wrap;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .btn{
+      text-decoration:none;
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid rgba(245,243,238,.28);
+      background: rgba(0,0,0,.18);
+      color:var(--parchment);
+      font-weight:600;
+    }
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(194,161,77,.95), rgba(194,161,77,.78));
+      border-color: rgba(194,161,77,.65);
+      color:#1a140a;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .panel{
+      margin-top:26px;
+      background: var(--parchment);
+      border: 1px solid rgba(28,28,28,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .panel-inner{padding:26px}
+    .eyebrow{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:12px;
+      color:var(--forest);
+      font-weight:700;
+    }
+    h2{
+      margin:10px 0 0;
+      font-size:28px;
+      letter-spacing:-.01em;
+    }
+    .rule{
+      height:1px; margin:16px 0 0;
+      background: linear-gradient(90deg, transparent, rgba(194,161,77,.7), transparent);
+    }
+    .charter{
+      margin-top:16px;
+      font-size:18px;
+      line-height:1.7;
+      color: #262626;
+    }
+    .charter strong{color:#111}
+    .grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      grid-column: span 6;
+      background: #fff;
+      border: 1px solid rgba(28,28,28,.08);
+      border-radius: 16px;
+      padding:16px;
+    }
+    .card h3{
+      margin:6px 0 0;
+      font-size:18px;
+      color:#141414;
+    }
+    .card p{
+      margin:10px 0 0;
+      color: var(--muted);
+      line-height:1.6;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:14px;
+    }
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(10,59,46,.18);
+      background: rgba(10,59,46,.06);
+      color: var(--forest);
+      font-weight:700;
+      font-size:12px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+    .featured{
+      margin-top:14px;
+      border-top:1px solid rgba(28,28,28,.08);
+      background: linear-gradient(180deg, #fff, #fbfaf7);
+    }
+    .featured .panel-inner{padding:22px 26px}
+    .featured h3{margin:8px 0 0; font-size:22px}
+    .meta{
+      margin-top:10px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:12px;
+      color:#3b3b3b;
+    }
+    .tag{
+      border:1px solid rgba(28,28,28,.10);
+      border-radius:999px;
+      padding:6px 10px;
+      background:#fff;
+    }
+    .founder{
+      margin-top:14px;
+      padding:22px 26px 26px;
+      border-top:1px solid rgba(28,28,28,.08);
+      background:#fff;
+    }
+    .founder p{
+      margin:12px 0 0;
+      color: var(--muted);
+      line-height:1.75;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:15px;
+      max-width:78ch;
+    }
+    footer{
+      padding:26px 0 40px;
+      color: rgba(245,243,238,.78);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:12px;
+      text-align:center;
+    }
+    @media (max-width: 760px){
+      .hero h1{font-size:34px}
+      .card{grid-column: span 12}
+      header{flex-direction:column; align-items:flex-start}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark">
+        <div class="seal" aria-hidden="true">
+          <!-- Minimal seal icon (hall + pillar) -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 10.5L12 5l8 5.5" stroke="rgba(245,243,238,.92)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M6.5 10.5V19h11V10.5" stroke="rgba(245,243,238,.92)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M9 19v-6.5M12 19v-8M15 19v-6.5" stroke="rgba(245,243,238,.65)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-size:12px; opacity:.92;">The</div>
+          <div style="font-size:14px;">Stigweard’s Provisions</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#charter">The Charter</a>
+        <a href="#halls">The Halls</a>
+        <a href="#featured">Featured Provision</a>
+        <a href="#access">Provision Access</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Provisions for a Life Built with Intention</h1>
+      <p>
+        Stewardship is not accumulation. It is the disciplined selection of what is allowed to remain.
+        Curated tools for individuals who value durability, restraint, and purpose.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#charter">View the Charter</a>
+        <a class="btn" href="#featured">Explore the Provisions</a>
+      </div>
+    </section>
+
+    <main class="panel" id="charter">
+      <div class="panel-inner">
+        <div class="eyebrow">The Charter</div>
+        <h2>A Statement of Purpose</h2>
+        <div class="rule"></div>
+        <div class="charter">
+          <p><strong>A steward guards value.</strong></p>
+          <p>
+            This principle governs our curation of physical goods. Every item offered through
+            <strong>The Stigweard’s Provisions</strong> is selected as a foundational tool—built not for impulse,
+            but for use, longevity, and responsibility.
+          </p>
+          <p>
+            This is not a marketplace of excess. It is a curated offering of provisions for a life of purpose,
+            security, and dignity.
+          </p>
+        </div>
+
+        <div class="grid" id="halls">
+          <div class="card">
+            <span class="pill">The Foundation</span>
+            <h3>What bears the body. What carries the day.</h3>
+            <p>Apparel and footwear chosen for repetition, endurance, and quiet reliability.</p>
+          </div>
+          <div class="card">
+            <span class="pill">The Workshop</span>
+            <h3>What measures. What builds. What decides.</h3>
+            <p>Tools and instruments that enable accuracy, record, and disciplined work.</p>
+          </div>
+          <div class="card">
+            <span class="pill">The Armory</span>
+            <h3>What prepares. What protects. What is kept close.</h3>
+            <p>Personal gear selected for readiness, order, and controlled access.</p>
+          </div>
+          <div class="card">
+            <span class="pill">The Reserve</span>
+            <h3>What restores. What sustains. What waits.</h3>
+            <p>Domestic provisions that support rest, preparedness, and continuity.</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="featured" id="featured">
+        <div class="panel-inner">
+          <div class="eyebrow">Featured Provision</div>
+          <h3>The Foundation Walker</h3>
+          <p style="margin:10px 0 0; color:#424242; line-height:1.7; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;">
+            For the individual who builds their day from the ground up. Crafted for endurance and disciplined use.
+            This is not footwear for display. It is a tool for presence.
+          </p>
+          <div class="meta">
+            <span class="tag">Standard: Endurance</span>
+            <span class="tag">Standard: Restraint</span>
+            <span class="tag">Standard: Utility</span>
+          </div>
+        </div>
+
+        <div class="founder" id="access">
+          <div class="eyebrow">Provision Access</div>
+          <h2>Begin with understanding</h2>
+          <p>
+            Before consumption comes clarity. If you wish to inquire about availability, curated selections, or
+            the standard behind a provision, begin with the Charter and reach out with intention.
+          </p>
+          <div class="cta" style="margin-top:14px;">
+            <a class="btn primary" href="#charter">Read the Charter</a>
+            <a class="btn" href="mailto:arinonebusiness@gmail.com">Request Provision Access</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      The Stigweard’s Provisions — Stewardship before consumption.
+    </footer>
+  </div>
+</body>
+</html>
