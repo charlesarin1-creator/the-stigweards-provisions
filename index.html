@@ -259,7 +259,67 @@
   .prov-card{grid-column: span 12;}
 }
 
-  </style>
+ .catalog-map{
+  border-top:1px solid rgba(28,28,28,.08);
+  background:#fff;
+}
+.catalog-details{
+  margin-top:14px;
+  border:1px solid rgba(28,28,28,.10);
+  border-radius:16px;
+  background: linear-gradient(180deg, #ffffff, #fbfaf7);
+  overflow:hidden;
+}
+.catalog-summary{
+  cursor:pointer;
+  list-style:none;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight:700;
+}
+.catalog-summary::-webkit-details-marker{display:none;}
+.catalog-hint{
+  font-weight:600;
+  font-size:12px;
+  color:#3b3b3b;
+  border:1px solid rgba(28,28,28,.10);
+  background:#fff;
+  padding:6px 10px;
+  border-radius:999px;
+}
+.catalog-grid{
+  padding:16px;
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:14px;
+}
+.cat-block{
+  grid-column: span 6;
+  border:1px solid rgba(28,28,28,.08);
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+}
+.cat-block h3{
+  margin:10px 0 0;
+  font-size:16px;
+}
+.cat-block ol{
+  margin:10px 0 0;
+  padding-left:18px;
+  color: var(--muted);
+  line-height:1.65;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size:14px;
+}
+@media (max-width: 760px){
+  .cat-block{grid-column: span 12;}
+}
+ </style>
 </head>
 
 <body>
@@ -368,7 +428,84 @@
       </article>
     </div>
   </div>
+</section><!-- Symbolic Catalog Map (30) -->
+<section class="catalog-map" aria-label="Symbolic Catalog Map">
+  <div class="panel-inner">
+    <div class="eyebrow">Catalog Map</div>
+    <h2>The Thirty</h2>
+    <p class="subcopy">
+      This map is language and structure. It expands deliberately as the standard is maintained.
+    </p>
+
+    <details class="catalog-details">
+      <summary class="catalog-summary">
+        View the 30-item symbolic catalog
+        <span class="catalog-hint">Expand</span>
+      </summary>
+
+      <div class="catalog-grid">
+        <article class="cat-block">
+          <span class="pill">The Foundation</span>
+          <h3>What bears the body. What carries the day.</h3>
+          <ol>
+            <li><strong>The Foundation Walker</strong> — Footwear</li>
+            <li><strong>The Steadfast Layer</strong> — Daily garment</li>
+            <li><strong>The Threshold Coat</strong> — Outerwear</li>
+            <li><strong>The Workday Shirt</strong> — Utility apparel</li>
+            <li><strong>The Long-Wear Belt</strong> — Carry stability</li>
+            <li><strong>The Plain Sock</strong> — Comfort through neglect</li>
+            <li><strong>The Weather Guard</strong> — Seasonal protection</li>
+            <li><strong>The Rest Day Slipper</strong> — Recovery and restraint</li>
+          </ol>
+        </article>
+
+        <article class="cat-block">
+          <span class="pill">The Workshop</span>
+          <h3>What measures. What builds. What decides.</h3>
+          <ol start="9">
+            <li><strong>The Measure Keeper</strong> — Precision tool</li>
+            <li><strong>The Quiet Lamp</strong> — Task lighting</li>
+            <li><strong>The Bench Notebook</strong> — Record keeping</li>
+            <li><strong>The Weight Scale</strong> — Accountability</li>
+            <li><strong>The Time Marker</strong> — Time discipline</li>
+            <li><strong>The Tool Roll</strong> — Order and access</li>
+            <li><strong>The Ledger Case</strong> — Memory and record</li>
+            <li><strong>The Signal Device</strong> — Communication tool</li>
+          </ol>
+        </article>
+
+        <article class="cat-block">
+          <span class="pill">The Armory</span>
+          <h3>What prepares. What protects. What is kept close.</h3>
+          <ol start="17">
+            <li><strong>The Daily Carry</strong> — Personal essentials</li>
+            <li><strong>The Field Pack</strong> — Mobility and readiness</li>
+            <li><strong>The Pocket Blade</strong> — Utility restraint</li>
+            <li><strong>The Watchful Case</strong> — Secure storage</li>
+            <li><strong>The Weather Flask</strong> — Sustenance</li>
+            <li><strong>The Hand Guard</strong> — Work protection</li>
+            <li><strong>The Secure Wallet</strong> — Value containment</li>
+          </ol>
+        </article>
+
+        <article class="cat-block">
+          <span class="pill">The Reserve</span>
+          <h3>What restores. What sustains. What waits.</h3>
+          <ol start="24">
+            <li><strong>The Night Mug</strong> — Evening ritual</li>
+            <li><strong>The Rest Chair</strong> — Recovery posture</li>
+            <li><strong>The Quiet Clock</strong> — Time awareness</li>
+            <li><strong>The Linen Set</strong> — Rest discipline</li>
+            <li><strong>The Table Lamp</strong> — Domestic light</li>
+            <li><strong>The Storage Chest</strong> — Order at home</li>
+            <li><strong>The Emergency Box</strong> — Preparedness</li>
+          </ol>
+        </article>
+      </div>
+    </details>
+  </div>
 </section>
+
 
 
         <div class="grid" id="halls">
