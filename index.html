@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>The Stigweard’s Provisions</title>
   <meta name="description" content="Provisions for a life built with intention. Curated tools aligned with stewardship, restraint, and enduring utility." />
+
   <style>
     :root{
       --charcoal:#1C1C1C;
@@ -18,7 +19,9 @@
       --radius: 18px;
       --max: 1080px;
     }
+
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
       color:var(--ink);
@@ -29,13 +32,18 @@
         linear-gradient(180deg, #1c1c1c 0%, #2a2521 20%, var(--parchment) 62%, var(--parchment) 100%);
       min-height:100vh;
     }
+
     a{color:inherit}
+    img{max-width:100%; height:auto; display:block}
+
     .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+
     header{
       padding:28px 0 8px;
       display:flex; justify-content:space-between; align-items:center; gap:18px;
       color:var(--parchment);
     }
+
     .mark{
       display:flex; align-items:center; gap:12px;
       letter-spacing:.06em;
@@ -43,6 +51,7 @@
       font-weight:700;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
+
     .seal{
       width:40px; height:40px; border-radius:999px;
       border:1px solid rgba(245,243,238,.45);
@@ -50,6 +59,7 @@
       background: rgba(0,0,0,.16);
     }
     .seal svg{width:22px; height:22px; opacity:.92}
+
     nav{
       display:flex; gap:14px; flex-wrap:wrap;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -64,10 +74,18 @@
       background: rgba(0,0,0,.12);
     }
     nav a:hover{border-color:rgba(245,243,238,.34)}
+
+    /* HERO */
     .hero{
       margin-top:14px;
-      padding:44px 0 30px;
+      padding:44px 0 24px;
       color:var(--parchment);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:end;
     }
     .hero h1{
       margin:0;
@@ -103,6 +121,27 @@
       color:#1a140a;
     }
     .btn:hover{transform: translateY(-1px)}
+
+    .hero-card{
+      border:1px solid rgba(245,243,238,.18);
+      border-radius: 16px;
+      overflow:hidden;
+      background: rgba(0,0,0,.10);
+      box-shadow: 0 18px 50px rgba(0,0,0,.28);
+    }
+    .hero-card img{width:100%; height:auto}
+    .hero-cap{
+      padding:10px 12px 12px;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(245,243,238,.86);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      border-top:1px solid rgba(245,243,238,.14);
+      background: rgba(0,0,0,.12);
+    }
+
+    /* PANELS */
     .panel{
       margin-top:26px;
       background: var(--parchment);
@@ -112,6 +151,7 @@
       overflow:hidden;
     }
     .panel-inner{padding:26px}
+
     .eyebrow{
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       text-transform:uppercase;
@@ -129,6 +169,7 @@
       height:1px; margin:16px 0 0;
       background: linear-gradient(90deg, transparent, rgba(194,161,77,.7), transparent);
     }
+
     .charter{
       margin-top:16px;
       font-size:18px;
@@ -136,6 +177,143 @@
       color: #262626;
     }
     .charter strong{color:#111}
+
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(10,59,46,.18);
+      background: rgba(10,59,46,.06);
+      color: var(--forest);
+      font-weight:700;
+      font-size:12px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+
+    /* IMAGE SECTIONS */
+    .media-block{
+      margin-top:18px;
+      border:1px solid rgba(28,28,28,.10);
+      border-radius:16px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,.07);
+    }
+    .media-block img{width:100%}
+    .media-caption{
+      padding:14px 16px 16px;
+      border-top:1px solid rgba(28,28,28,.08);
+      color:#3b3b3b;
+      line-height:1.6;
+      font-size:14px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .media-caption strong{
+      color:#111;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size:16px;
+    }
+
+    /* FIRST SEVEN */
+    .first-seven{
+      border-top:1px solid rgba(28,28,28,.08);
+      background: linear-gradient(180deg, #ffffff, #fbfaf7);
+    }
+    .subcopy{
+      margin:10px 0 0;
+      color:#424242;
+      line-height:1.7;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      max-width:78ch;
+    }
+    .provisions-grid{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .prov-card{
+      grid-column: span 6;
+      background:#fff;
+      border:1px solid rgba(28,28,28,.08);
+      border-radius:16px;
+      padding:16px;
+    }
+    .prov-card h3{
+      margin:8px 0 0;
+      font-size:18px;
+      color:#141414;
+    }
+    .prov-card p{
+      margin:10px 0 0;
+      color: var(--muted);
+      line-height:1.6;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:14px;
+    }
+
+    /* CATALOG MAP (30) */
+    .catalog-map{
+      border-top:1px solid rgba(28,28,28,.08);
+      background:#fff;
+    }
+    .catalog-details{
+      margin-top:14px;
+      border:1px solid rgba(28,28,28,.10);
+      border-radius:16px;
+      background: linear-gradient(180deg, #ffffff, #fbfaf7);
+      overflow:hidden;
+    }
+    .catalog-summary{
+      cursor:pointer;
+      list-style:none;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight:700;
+    }
+    .catalog-summary::-webkit-details-marker{display:none;}
+    .catalog-hint{
+      font-weight:600;
+      font-size:12px;
+      color:#3b3b3b;
+      border:1px solid rgba(28,28,28,.10);
+      background:#fff;
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .catalog-grid{
+      padding:16px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .cat-block{
+      grid-column: span 6;
+      border:1px solid rgba(28,28,28,.08);
+      background:#fff;
+      border-radius:16px;
+      padding:16px;
+    }
+    .cat-block h3{
+      margin:10px 0 0;
+      font-size:16px;
+    }
+    .cat-block ol{
+      margin:10px 0 0;
+      padding-left:18px;
+      color: var(--muted);
+      line-height:1.65;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:14px;
+    }
+
+    /* HALLS */
     .grid{
       margin-top:22px;
       display:grid;
@@ -161,19 +339,8 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       font-size:14px;
     }
-    .pill{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(10,59,46,.18);
-      background: rgba(10,59,46,.06);
-      color: var(--forest);
-      font-weight:700;
-      font-size:12px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-    }
+
+    /* FEATURED + ACCESS */
     .featured{
       margin-top:14px;
       border-top:1px solid rgba(28,28,28,.08);
@@ -194,6 +361,7 @@
       padding:6px 10px;
       background:#fff;
     }
+
     .founder{
       margin-top:14px;
       padding:22px 26px 26px;
@@ -208,6 +376,7 @@
       font-size:15px;
       max-width:78ch;
     }
+
     footer{
       padding:26px 0 40px;
       color: rgba(245,243,238,.78);
@@ -215,119 +384,26 @@
       font-size:12px;
       text-align:center;
     }
+
+    @media (max-width: 860px){
+      .hero-grid{grid-template-columns: 1fr}
+    }
     @media (max-width: 760px){
       .hero h1{font-size:34px}
       .card{grid-column: span 12}
+      .prov-card{grid-column: span 12}
+      .cat-block{grid-column: span 12}
       header{flex-direction:column; align-items:flex-start}
-    }.first-seven{
-  border-top:1px solid rgba(28,28,28,.08);
-  background: linear-gradient(180deg, #ffffff, #fbfaf7);
-}
-.subcopy{
-  margin:10px 0 0;
-  color:#424242;
-  line-height:1.7;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  max-width:78ch;
-}
-.provisions-grid{
-  margin-top:16px;
-  display:grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap:14px;
-}
-.prov-card{
-  grid-column: span 6;
-  background:#fff;
-  border:1px solid rgba(28,28,28,.08);
-  border-radius:16px;
-  padding:16px;
-}
-.prov-card h3{
-  margin:8px 0 0;
-  font-size:18px;
-  color:#141414;
-}
-.prov-card p{
-  margin:10px 0 0;
-  color: var(--muted);
-  line-height:1.6;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size:14px;
-}
-@media (max-width: 760px){
-  .prov-card{grid-column: span 12;}
-}
-
- .catalog-map{
-  border-top:1px solid rgba(28,28,28,.08);
-  background:#fff;
-}
-.catalog-details{
-  margin-top:14px;
-  border:1px solid rgba(28,28,28,.10);
-  border-radius:16px;
-  background: linear-gradient(180deg, #ffffff, #fbfaf7);
-  overflow:hidden;
-}
-.catalog-summary{
-  cursor:pointer;
-  list-style:none;
-  padding:14px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight:700;
-}
-.catalog-summary::-webkit-details-marker{display:none;}
-.catalog-hint{
-  font-weight:600;
-  font-size:12px;
-  color:#3b3b3b;
-  border:1px solid rgba(28,28,28,.10);
-  background:#fff;
-  padding:6px 10px;
-  border-radius:999px;
-}
-.catalog-grid{
-  padding:16px;
-  display:grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap:14px;
-}
-.cat-block{
-  grid-column: span 6;
-  border:1px solid rgba(28,28,28,.08);
-  background:#fff;
-  border-radius:16px;
-  padding:16px;
-}
-.cat-block h3{
-  margin:10px 0 0;
-  font-size:16px;
-}
-.cat-block ol{
-  margin:10px 0 0;
-  padding-left:18px;
-  color: var(--muted);
-  line-height:1.65;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size:14px;
-}
-@media (max-width: 760px){
-  .cat-block{grid-column: span 12;}
-}
- </style>
+    }
+  </style>
 </head>
 
 <body>
   <div class="wrap">
+
     <header>
       <div class="mark">
         <div class="seal" aria-hidden="true">
-          <!-- Minimal seal icon (hall + pillar) -->
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M4 10.5L12 5l8 5.5" stroke="rgba(245,243,238,.92)" stroke-width="1.5" stroke-linecap="round"/>
             <path d="M6.5 10.5V19h11V10.5" stroke="rgba(245,243,238,.92)" stroke-width="1.5" stroke-linecap="round"/>
@@ -339,8 +415,10 @@
           <div style="font-size:14px;">Stigweard’s Provisions</div>
         </div>
       </div>
+
       <nav>
         <a href="#charter">The Charter</a>
+        <a href="#firstseven">The First Seven</a>
         <a href="#halls">The Halls</a>
         <a href="#featured">Featured Provision</a>
         <a href="#access">Provision Access</a>
@@ -348,14 +426,24 @@
     </header>
 
     <section class="hero">
-      <h1>Provisions for a Life Built with Intention</h1>
-      <p>
-        Stewardship is not accumulation. It is the disciplined selection of what is allowed to remain.
-        Curated tools for individuals who value durability, restraint, and purpose.
-      </p>
-      <div class="cta">
-        <a class="btn primary" href="#charter">View the Charter</a>
-        <a class="btn" href="#featured">Explore the Provisions</a>
+      <div class="hero-grid">
+        <div>
+          <h1>Provisions for a Life Built with Intention</h1>
+          <p>
+            Stewardship is not accumulation. It is the disciplined selection of what is allowed to remain.
+            Curated tools for individuals who value durability, restraint, and purpose.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="#charter">View the Charter</a>
+            <a class="btn" href="#featured">Explore the Provisions</a>
+          </div>
+        </div>
+
+        <!-- HERO IMAGE -->
+        <div class="hero-card" aria-label="I Build With Conscious Hands">
+          <img src="assets/d91ac686-faa2-4c0a-a5b7-08e95cdabb2f.png" alt="I Build With Conscious Hands visual" />
+          <div class="hero-cap">I BUILD WITH CONSCIOUS HANDS.</div>
+        </div>
       </div>
     </section>
 
@@ -364,6 +452,7 @@
         <div class="eyebrow">The Charter</div>
         <h2>A Statement of Purpose</h2>
         <div class="rule"></div>
+
         <div class="charter">
           <p><strong>A steward guards value.</strong></p>
           <p>
@@ -375,140 +464,166 @@
             This is not a marketplace of excess. It is a curated offering of provisions for a life of purpose,
             security, and dignity.
           </p>
-        </div><!-- First Seven Provisions -->
-<section class="first-seven" aria-label="The First Seven Provisions">
-  <div class="panel-inner">
-    <div class="eyebrow">The First Seven</div>
-    <h2>Foundational Provisions</h2>
-    <p class="subcopy">
-      This is the first circle of curation—language before inventory. Each provision is named as a standard of use.
-    </p>
+        </div>
 
-    <div class="provisions-grid">
-      <article class="prov-card">
-        <span class="pill">The Foundation</span>
-        <h3>The Foundation Walker</h3>
-        <p>Footwear chosen for endurance, repetition, and grounded responsibility.</p>
-      </article>
-
-      <article class="prov-card">
-        <span class="pill">The Foundation</span>
-        <h3>The Steadfast Layer</h3>
-        <p>A daily garment selected for consistency—built for service, not display.</p>
-      </article>
-
-      <article class="prov-card">
-        <span class="pill">The Workshop</span>
-        <h3>The Measure Keeper</h3>
-        <p>Precision as discipline. What is measured can be stewarded.</p>
-      </article>
-
-      <article class="prov-card">
-        <span class="pill">The Reserve</span>
-        <h3>The Quiet Lamp</h3>
-        <p>Calm illumination for the work that continues after noise ends.</p>
-      </article>
-
-      <article class="prov-card">
-        <span class="pill">The Armory</span>
-        <h3>The Daily Carry</h3>
-        <p>Only what earns its place. Readiness without clutter.</p>
-      </article>
-
-      <article class="prov-card">
-        <span class="pill">The Workshop</span>
-        <h3>The Ledger Case</h3>
-        <p>Order, record, and accountability—what must not be forgotten.</p>
-      </article>
-
-      <article class="prov-card">
-        <span class="pill">The Foundation</span>
-        <h3>The Threshold Coat</h3>
-        <p>Worn at the boundary between comfort and responsibility.</p>
-      </article>
-    </div>
-  </div>
-</section><!-- Symbolic Catalog Map (30) -->
-<section class="catalog-map" aria-label="Symbolic Catalog Map">
-  <div class="panel-inner">
-    <div class="eyebrow">Catalog Map</div>
-    <h2>The Thirty</h2>
-    <p class="subcopy">
-      This map is language and structure. It expands deliberately as the standard is maintained.
-    </p>
-
-    <details class="catalog-details">
-      <summary class="catalog-summary">
-        View the 30-item symbolic catalog
-        <span class="catalog-hint">Expand</span>
-      </summary>
-
-      <div class="catalog-grid">
-        <article class="cat-block">
-          <span class="pill">The Foundation</span>
-          <h3>What bears the body. What carries the day.</h3>
-          <ol>
-            <li><strong>The Foundation Walker</strong> — Footwear</li>
-            <li><strong>The Steadfast Layer</strong> — Daily garment</li>
-            <li><strong>The Threshold Coat</strong> — Outerwear</li>
-            <li><strong>The Workday Shirt</strong> — Utility apparel</li>
-            <li><strong>The Long-Wear Belt</strong> — Carry stability</li>
-            <li><strong>The Plain Sock</strong> — Comfort through neglect</li>
-            <li><strong>The Weather Guard</strong> — Seasonal protection</li>
-            <li><strong>The Rest Day Slipper</strong> — Recovery and restraint</li>
-          </ol>
-        </article>
-
-        <article class="cat-block">
-          <span class="pill">The Workshop</span>
-          <h3>What measures. What builds. What decides.</h3>
-          <ol start="9">
-            <li><strong>The Measure Keeper</strong> — Precision tool</li>
-            <li><strong>The Quiet Lamp</strong> — Task lighting</li>
-            <li><strong>The Bench Notebook</strong> — Record keeping</li>
-            <li><strong>The Weight Scale</strong> — Accountability</li>
-            <li><strong>The Time Marker</strong> — Time discipline</li>
-            <li><strong>The Tool Roll</strong> — Order and access</li>
-            <li><strong>The Ledger Case</strong> — Memory and record</li>
-            <li><strong>The Signal Device</strong> — Communication tool</li>
-          </ol>
-        </article>
-
-        <article class="cat-block">
-          <span class="pill">The Armory</span>
-          <h3>What prepares. What protects. What is kept close.</h3>
-          <ol start="17">
-            <li><strong>The Daily Carry</strong> — Personal essentials</li>
-            <li><strong>The Field Pack</strong> — Mobility and readiness</li>
-            <li><strong>The Pocket Blade</strong> — Utility restraint</li>
-            <li><strong>The Watchful Case</strong> — Secure storage</li>
-            <li><strong>The Weather Flask</strong> — Sustenance</li>
-            <li><strong>The Hand Guard</strong> — Work protection</li>
-            <li><strong>The Secure Wallet</strong> — Value containment</li>
-          </ol>
-        </article>
-
-        <article class="cat-block">
-          <span class="pill">The Reserve</span>
-          <h3>What restores. What sustains. What waits.</h3>
-          <ol start="24">
-            <li><strong>The Night Mug</strong> — Evening ritual</li>
-            <li><strong>The Rest Chair</strong> — Recovery posture</li>
-            <li><strong>The Quiet Clock</strong> — Time awareness</li>
-            <li><strong>The Linen Set</strong> — Rest discipline</li>
-            <li><strong>The Table Lamp</strong> — Domestic light</li>
-            <li><strong>The Storage Chest</strong> — Order at home</li>
-            <li><strong>The Emergency Box</strong> — Preparedness</li>
-          </ol>
-        </article>
+        <!-- FOUNDER + CRAFT IMAGE -->
+        <div class="media-block" aria-label="Founder and craft image">
+          <img src="assets/e68f13ba-16b4-44ca-b910-38f2b34aef2c.png" alt="Founder practicing conscious craft at the workbench" />
+          <div class="media-caption">
+            <strong>Founder–Craft Pairing</strong><br/>
+            The brand is a standard, not a mood. The work comes first. The tools are chosen to match it.
+          </div>
+        </div>
       </div>
-    </details>
-  </div>
-</section>
 
+      <!-- FIRST SEVEN -->
+      <section class="first-seven" id="firstseven" aria-label="The First Seven Provisions">
+        <div class="panel-inner">
+          <div class="eyebrow">The First Seven</div>
+          <h2>Foundational Provisions</h2>
+          <p class="subcopy">
+            This is the first circle of curation—language before inventory. Each provision is named as a standard of use.
+          </p>
 
+          <div class="provisions-grid">
+            <article class="prov-card">
+              <span class="pill">The Foundation</span>
+              <h3>The Foundation Walker</h3>
+              <p>Footwear chosen for endurance, repetition, and grounded responsibility.</p>
+            </article>
 
-        <div class="grid" id="halls">
+            <article class="prov-card">
+              <span class="pill">The Foundation</span>
+              <h3>The Steadfast Layer</h3>
+              <p>A daily garment selected for consistency—built for service, not display.</p>
+            </article>
+
+            <article class="prov-card">
+              <span class="pill">The Workshop</span>
+              <h3>The Measure Keeper</h3>
+              <p>Precision as discipline. What is measured can be stewarded.</p>
+            </article>
+
+            <article class="prov-card">
+              <span class="pill">The Reserve</span>
+              <h3>The Quiet Lamp</h3>
+              <p>Calm illumination for the work that continues after noise ends.</p>
+            </article>
+
+            <article class="prov-card">
+              <span class="pill">The Armory</span>
+              <h3>The Daily Carry</h3>
+              <p>Only what earns its place. Readiness without clutter.</p>
+            </article>
+
+            <article class="prov-card">
+              <span class="pill">The Workshop</span>
+              <h3>The Ledger Case</h3>
+              <p>Order, record, and accountability—what must not be forgotten.</p>
+            </article>
+
+            <article class="prov-card">
+              <span class="pill">The Foundation</span>
+              <h3>The Threshold Coat</h3>
+              <p>Worn at the boundary between comfort and responsibility.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CATALOG MAP (30) -->
+      <section class="catalog-map" aria-label="Symbolic Catalog Map">
+        <div class="panel-inner">
+          <div class="eyebrow">Catalog Map</div>
+          <h2>The Thirty</h2>
+          <p class="subcopy">
+            This map is language and structure. It expands deliberately as the standard is maintained.
+          </p>
+
+          <details class="catalog-details">
+            <summary class="catalog-summary">
+              View the 30-item symbolic catalog
+              <span class="catalog-hint">Expand</span>
+            </summary>
+
+            <div class="catalog-grid">
+              <article class="cat-block">
+                <span class="pill">The Foundation</span>
+                <h3>What bears the body. What carries the day.</h3>
+                <ol>
+                  <li><strong>The Foundation Walker</strong> — Footwear</li>
+                  <li><strong>The Steadfast Layer</strong> — Daily garment</li>
+                  <li><strong>The Threshold Coat</strong> — Outerwear</li>
+                  <li><strong>The Workday Shirt</strong> — Utility apparel</li>
+                  <li><strong>The Long-Wear Belt</strong> — Carry stability</li>
+                  <li><strong>The Plain Sock</strong> — Comfort through neglect</li>
+                  <li><strong>The Weather Guard</strong> — Seasonal protection</li>
+                  <li><strong>The Rest Day Slipper</strong> — Recovery and restraint</li>
+                </ol>
+              </article>
+
+              <article class="cat-block">
+                <span class="pill">The Workshop</span>
+                <h3>What measures. What builds. What decides.</h3>
+                <ol start="9">
+                  <li><strong>The Measure Keeper</strong> — Precision tool</li>
+                  <li><strong>The Quiet Lamp</strong> — Task lighting</li>
+                  <li><strong>The Bench Notebook</strong> — Record keeping</li>
+                  <li><strong>The Weight Scale</strong> — Accountability</li>
+                  <li><strong>The Time Marker</strong> — Time discipline</li>
+                  <li><strong>The Tool Roll</strong> — Order and access</li>
+                  <li><strong>The Ledger Case</strong> — Memory and record</li>
+                  <li><strong>The Signal Device</strong> — Communication tool</li>
+                </ol>
+              </article>
+
+              <article class="cat-block">
+                <span class="pill">The Armory</span>
+                <h3>What prepares. What protects. What is kept close.</h3>
+                <ol start="17">
+                  <li><strong>The Daily Carry</strong> — Personal essentials</li>
+                  <li><strong>The Field Pack</strong> — Mobility and readiness</li>
+                  <li><strong>The Pocket Blade</strong> — Utility restraint</li>
+                  <li><strong>The Watchful Case</strong> — Secure storage</li>
+                  <li><strong>The Weather Flask</strong> — Sustenance</li>
+                  <li><strong>The Hand Guard</strong> — Work protection</li>
+                  <li><strong>The Secure Wallet</strong> — Value containment</li>
+                </ol>
+              </article>
+
+              <article class="cat-block">
+                <span class="pill">The Reserve</span>
+                <h3>What restores. What sustains. What waits.</h3>
+                <ol start="24">
+                  <li><strong>The Night Mug</strong> — Evening ritual</li>
+                  <li><strong>The Rest Chair</strong> — Recovery posture</li>
+                  <li><strong>The Quiet Clock</strong> — Time awareness</li>
+                  <li><strong>The Linen Set</strong> — Rest discipline</li>
+                  <li><strong>The Table Lamp</strong> — Domestic light</li>
+                  <li><strong>The Storage Chest</strong> — Order at home</li>
+                  <li><strong>The Emergency Box</strong> — Preparedness</li>
+                </ol>
+              </article>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- HALLS -->
+      <div class="panel-inner" id="halls">
+        <div class="eyebrow">The Halls</div>
+        <h2>Four Categories of Curation</h2>
+
+        <!-- HALLS IMAGE -->
+        <div class="media-block" aria-label="Product categories image">
+          <img src="assets/132031b9-0a35-40e8-ae96-25531a8e7790.png" alt="Product categories: The Foundation, The Workshop, The Armory, The Reserve" />
+          <div class="media-caption">
+            <strong>The Four Halls</strong><br/>
+            Foundation. Workshop. Armory. Reserve. Each hall exists to reduce noise and increase utility.
+          </div>
+        </div>
+
+        <div class="grid">
           <div class="card">
             <span class="pill">The Foundation</span>
             <h3>What bears the body. What carries the day.</h3>
@@ -532,14 +647,21 @@
         </div>
       </div>
 
+      <!-- FEATURED -->
       <section class="featured" id="featured">
         <div class="panel-inner">
           <div class="eyebrow">Featured Provision</div>
           <h3>The Foundation Walker</h3>
-          <p style="margin:10px 0 0; color:#424242; line-height:1.7; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;">
-            For the individual who builds their day from the ground up. Crafted for endurance and disciplined use.
-            This is not footwear for display. It is a tool for presence.
-          </p>
+
+          <!-- FEATURED IMAGE -->
+          <div class="media-block" aria-label="Featured Foundation Walker image">
+            <img src="assets/2e264f35-9859-459e-bb7a-f1967952463e.png" alt="The Foundation Walker — product poster" />
+            <div class="media-caption">
+              <strong>The Foundation Walker</strong><br/>
+              For the individual who builds their day from the ground up. Crafted for endurance and disciplined use.
+            </div>
+          </div>
+
           <div class="meta">
             <span class="tag">Standard: Endurance</span>
             <span class="tag">Standard: Restraint</span>
@@ -547,6 +669,7 @@
           </div>
         </div>
 
+        <!-- ACCESS -->
         <div class="founder" id="access">
           <div class="eyebrow">Provision Access</div>
           <h2>Begin with understanding</h2>
