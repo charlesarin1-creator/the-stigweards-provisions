@@ -19,9 +19,7 @@
       --radius: 18px;
       --max: 1080px;
     }
-
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
       color:var(--ink);
@@ -32,18 +30,13 @@
         linear-gradient(180deg, #1c1c1c 0%, #2a2521 20%, var(--parchment) 62%, var(--parchment) 100%);
       min-height:100vh;
     }
-
     a{color:inherit}
-    img{max-width:100%; height:auto; display:block}
-
     .wrap{max-width:var(--max); margin:0 auto; padding:24px}
-
     header{
       padding:28px 0 8px;
       display:flex; justify-content:space-between; align-items:center; gap:18px;
       color:var(--parchment);
     }
-
     .mark{
       display:flex; align-items:center; gap:12px;
       letter-spacing:.06em;
@@ -51,7 +44,6 @@
       font-weight:700;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
-
     .seal{
       width:40px; height:40px; border-radius:999px;
       border:1px solid rgba(245,243,238,.45);
@@ -59,7 +51,6 @@
       background: rgba(0,0,0,.16);
     }
     .seal svg{width:22px; height:22px; opacity:.92}
-
     nav{
       display:flex; gap:14px; flex-wrap:wrap;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -74,18 +65,10 @@
       background: rgba(0,0,0,.12);
     }
     nav a:hover{border-color:rgba(245,243,238,.34)}
-
-    /* HERO */
     .hero{
       margin-top:14px;
-      padding:44px 0 24px;
+      padding:44px 0 30px;
       color:var(--parchment);
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:18px;
-      align-items:end;
     }
     .hero h1{
       margin:0;
@@ -114,6 +97,9 @@
       background: rgba(0,0,0,.18);
       color:var(--parchment);
       font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
     }
     .btn.primary{
       background: linear-gradient(180deg, rgba(194,161,77,.95), rgba(194,161,77,.78));
@@ -121,27 +107,6 @@
       color:#1a140a;
     }
     .btn:hover{transform: translateY(-1px)}
-
-    .hero-card{
-      border:1px solid rgba(245,243,238,.18);
-      border-radius: 16px;
-      overflow:hidden;
-      background: rgba(0,0,0,.10);
-      box-shadow: 0 18px 50px rgba(0,0,0,.28);
-    }
-    .hero-card img{width:100%; height:auto}
-    .hero-cap{
-      padding:10px 12px 12px;
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:rgba(245,243,238,.86);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      border-top:1px solid rgba(245,243,238,.14);
-      background: rgba(0,0,0,.12);
-    }
-
-    /* PANELS */
     .panel{
       margin-top:26px;
       background: var(--parchment);
@@ -151,7 +116,6 @@
       overflow:hidden;
     }
     .panel-inner{padding:26px}
-
     .eyebrow{
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       text-transform:uppercase;
@@ -169,7 +133,6 @@
       height:1px; margin:16px 0 0;
       background: linear-gradient(90deg, transparent, rgba(194,161,77,.7), transparent);
     }
-
     .charter{
       margin-top:16px;
       font-size:18px;
@@ -178,6 +141,33 @@
     }
     .charter strong{color:#111}
 
+    /* Halls grid */
+    .grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      grid-column: span 6;
+      background: #fff;
+      border: 1px solid rgba(28,28,28,.08);
+      border-radius: 16px;
+      padding:16px;
+      overflow:hidden;
+    }
+    .card h3{
+      margin:6px 0 0;
+      font-size:18px;
+      color:#141414;
+    }
+    .card p{
+      margin:10px 0 0;
+      color: var(--muted);
+      line-height:1.6;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:14px;
+    }
     .pill{
       display:inline-block;
       padding:6px 10px;
@@ -192,31 +182,74 @@
       text-transform:uppercase;
     }
 
-    /* IMAGE SECTIONS */
-    .media-block{
-      margin-top:18px;
-      border:1px solid rgba(28,28,28,.10);
-      border-radius:16px;
-      overflow:hidden;
-      background:#fff;
-      box-shadow: 0 10px 25px rgba(0,0,0,.07);
-    }
-    .media-block img{width:100%}
-    .media-caption{
-      padding:14px 16px 16px;
+    /* Featured */
+    .featured{
+      margin-top:14px;
       border-top:1px solid rgba(28,28,28,.08);
-      color:#3b3b3b;
-      line-height:1.6;
-      font-size:14px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #fff, #fbfaf7);
     }
-    .media-caption strong{
-      color:#111;
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      font-size:16px;
+    .featured .panel-inner{padding:22px 26px}
+    .featured h3{margin:8px 0 0; font-size:22px}
+    .meta{
+      margin-top:10px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:12px;
+      color:#3b3b3b;
+    }
+    .tag{
+      border:1px solid rgba(28,28,28,.10);
+      border-radius:999px;
+      padding:6px 10px;
+      background:#fff;
     }
 
-    /* FIRST SEVEN */
+    .founder{
+      margin-top:14px;
+      padding:22px 26px 26px;
+      border-top:1px solid rgba(28,28,28,.08);
+      background:#fff;
+    }
+    .founder p{
+      margin:12px 0 0;
+      color: var(--muted);
+      line-height:1.75;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:15px;
+      max-width:78ch;
+    }
+
+    footer{
+      padding:26px 0 40px;
+      color: rgba(245,243,238,.78);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:12px;
+      text-align:center;
+    }
+
+    /* --- NEW: Image styling (keeps your design intact) --- */
+    .img-frame{
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(28,28,28,.08);
+      background:#fff;
+      box-shadow: 0 10px 28px rgba(0,0,0,.10);
+    }
+    .img-frame img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .img-caption{
+      padding:12px 14px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:12px;
+      color:#3b3b3b;
+      border-top:1px solid rgba(28,28,28,.08);
+      background: linear-gradient(180deg, #ffffff, #fbfaf7);
+    }
+
+    /* First Seven */
     .first-seven{
       border-top:1px solid rgba(28,28,28,.08);
       background: linear-gradient(180deg, #ffffff, #fbfaf7);
@@ -239,14 +272,25 @@
       background:#fff;
       border:1px solid rgba(28,28,28,.08);
       border-radius:16px;
-      padding:16px;
+      overflow:hidden;
     }
-    .prov-card h3{
+    .prov-media{
+      background:#0b0b0b;
+      border-bottom:1px solid rgba(28,28,28,.08);
+    }
+    .prov-media img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      display:block;
+    }
+    .prov-body{ padding:16px; }
+    .prov-body h3{
       margin:8px 0 0;
       font-size:18px;
       color:#141414;
     }
-    .prov-card p{
+    .prov-body p{
       margin:10px 0 0;
       color: var(--muted);
       line-height:1.6;
@@ -254,7 +298,7 @@
       font-size:14px;
     }
 
-    /* CATALOG MAP (30) */
+    /* Catalog map */
     .catalog-map{
       border-top:1px solid rgba(28,28,28,.08);
       background:#fff;
@@ -313,94 +357,19 @@
       font-size:14px;
     }
 
-    /* HALLS */
-    .grid{
-      margin-top:22px;
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:14px;
-    }
-    .card{
-      grid-column: span 6;
-      background: #fff;
-      border: 1px solid rgba(28,28,28,.08);
-      border-radius: 16px;
-      padding:16px;
-    }
-    .card h3{
-      margin:6px 0 0;
-      font-size:18px;
-      color:#141414;
-    }
-    .card p{
-      margin:10px 0 0;
-      color: var(--muted);
-      line-height:1.6;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size:14px;
-    }
-
-    /* FEATURED + ACCESS */
-    .featured{
-      margin-top:14px;
-      border-top:1px solid rgba(28,28,28,.08);
-      background: linear-gradient(180deg, #fff, #fbfaf7);
-    }
-    .featured .panel-inner{padding:22px 26px}
-    .featured h3{margin:8px 0 0; font-size:22px}
-    .meta{
-      margin-top:10px;
-      display:flex; gap:10px; flex-wrap:wrap;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size:12px;
-      color:#3b3b3b;
-    }
-    .tag{
-      border:1px solid rgba(28,28,28,.10);
-      border-radius:999px;
-      padding:6px 10px;
-      background:#fff;
-    }
-
-    .founder{
-      margin-top:14px;
-      padding:22px 26px 26px;
-      border-top:1px solid rgba(28,28,28,.08);
-      background:#fff;
-    }
-    .founder p{
-      margin:12px 0 0;
-      color: var(--muted);
-      line-height:1.75;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size:15px;
-      max-width:78ch;
-    }
-
-    footer{
-      padding:26px 0 40px;
-      color: rgba(245,243,238,.78);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size:12px;
-      text-align:center;
-    }
-
-    @media (max-width: 860px){
-      .hero-grid{grid-template-columns: 1fr}
-    }
     @media (max-width: 760px){
       .hero h1{font-size:34px}
       .card{grid-column: span 12}
-      .prov-card{grid-column: span 12}
-      .cat-block{grid-column: span 12}
       header{flex-direction:column; align-items:flex-start}
+      .prov-card{grid-column: span 12;}
+      .cat-block{grid-column: span 12;}
+      .prov-media img{height:220px;}
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-
     <header>
       <div class="mark">
         <div class="seal" aria-hidden="true">
@@ -418,7 +387,7 @@
 
       <nav>
         <a href="#charter">The Charter</a>
-        <a href="#firstseven">The First Seven</a>
+        <a href="#first-seven">The First Seven</a>
         <a href="#halls">The Halls</a>
         <a href="#featured">Featured Provision</a>
         <a href="#access">Provision Access</a>
@@ -426,24 +395,14 @@
     </header>
 
     <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <h1>Provisions for a Life Built with Intention</h1>
-          <p>
-            Stewardship is not accumulation. It is the disciplined selection of what is allowed to remain.
-            Curated tools for individuals who value durability, restraint, and purpose.
-          </p>
-          <div class="cta">
-            <a class="btn primary" href="#charter">View the Charter</a>
-            <a class="btn" href="#featured">Explore the Provisions</a>
-          </div>
-        </div>
-
-        <!-- HERO IMAGE -->
-        <div class="hero-card" aria-label="I Build With Conscious Hands">
-          <img src="assets/d91ac686-faa2-4c0a-a5b7-08e95cdabb2f.png" alt="I Build With Conscious Hands visual" />
-          <div class="hero-cap">I BUILD WITH CONSCIOUS HANDS.</div>
-        </div>
+      <h1>Provisions for a Life Built with Intention</h1>
+      <p>
+        Stewardship is not accumulation. It is the disciplined selection of what is allowed to remain.
+        Curated tools for individuals who value durability, restraint, and purpose.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#charter">View the Charter</a>
+        <a class="btn" href="#first-seven">Explore the Provisions</a>
       </div>
     </section>
 
@@ -465,19 +424,10 @@
             security, and dignity.
           </p>
         </div>
-
-        <!-- FOUNDER + CRAFT IMAGE -->
-        <div class="media-block" aria-label="Founder and craft image">
-          <img src="assets/e68f13ba-16b4-44ca-b910-38f2b34aef2c.png" alt="Founder practicing conscious craft at the workbench" />
-          <div class="media-caption">
-            <strong>Founder–Craft Pairing</strong><br/>
-            The brand is a standard, not a mood. The work comes first. The tools are chosen to match it.
-          </div>
-        </div>
       </div>
 
-      <!-- FIRST SEVEN -->
-      <section class="first-seven" id="firstseven" aria-label="The First Seven Provisions">
+      <!-- First Seven Provisions (WITH YOUR IMAGES) -->
+      <section class="first-seven" id="first-seven" aria-label="The First Seven Provisions">
         <div class="panel-inner">
           <div class="eyebrow">The First Seven</div>
           <h2>Foundational Provisions</h2>
@@ -486,52 +436,108 @@
           </p>
 
           <div class="provisions-grid">
+            <!-- 1) Foundation Walker -->
             <article class="prov-card">
-              <span class="pill">The Foundation</span>
-              <h3>The Foundation Walker</h3>
-              <p>Footwear chosen for endurance, repetition, and grounded responsibility.</p>
+              <div class="prov-media">
+                <img
+                  src="assets/9c08bcb7-e3eb-4482-8b35-fd79670b6a76.png"
+                  alt="The Foundation Walker"
+                  loading="lazy"
+                />
+              </div>
+              <div class="prov-body">
+                <span class="pill">The Foundation</span>
+                <h3>The Foundation Walker</h3>
+                <p>Footwear chosen for endurance, repetition, and grounded responsibility.</p>
+              </div>
             </article>
 
+            <!-- 2) Bench Notebook -->
             <article class="prov-card">
-              <span class="pill">The Foundation</span>
-              <h3>The Steadfast Layer</h3>
-              <p>A daily garment selected for consistency—built for service, not display.</p>
+              <div class="prov-media">
+                <img
+                  src="assets/c3f62696-bada-43d3-aadf-ebcf76710cfd.png"
+                  alt="The Bench Notebook"
+                  loading="lazy"
+                />
+              </div>
+              <div class="prov-body">
+                <span class="pill">The Workshop</span>
+                <h3>The Bench Notebook</h3>
+                <p>Record, reflection, and proof-of-work. What is written becomes accountable.</p>
+              </div>
             </article>
 
+            <!-- 3) Quiet Lamp -->
             <article class="prov-card">
-              <span class="pill">The Workshop</span>
-              <h3>The Measure Keeper</h3>
-              <p>Precision as discipline. What is measured can be stewarded.</p>
+              <div class="prov-media">
+                <img
+                  src="assets/7e31af27-1e8c-4832-b054-3a35f75cc3cd.png"
+                  alt="The Quiet Lamp"
+                  loading="lazy"
+                />
+              </div>
+              <div class="prov-body">
+                <span class="pill">The Reserve</span>
+                <h3>The Quiet Lamp</h3>
+                <p>Calm illumination for the work that continues after noise ends.</p>
+              </div>
             </article>
 
+            <!-- 4) Daily Carry (your jpg filename) -->
             <article class="prov-card">
-              <span class="pill">The Reserve</span>
-              <h3>The Quiet Lamp</h3>
-              <p>Calm illumination for the work that continues after noise ends.</p>
+              <div class="prov-media">
+                <img
+                  src="assets/Medium-Brown-Billfold-bifold-wallet-mens-leather-bifold-wallet-leather-billfold-wallet-KMM-Co_-4.jpg"
+                  alt="The Daily Carry"
+                  loading="lazy"
+                />
+              </div>
+              <div class="prov-body">
+                <span class="pill">The Armory</span>
+                <h3>The Daily Carry</h3>
+                <p>Only what earns its place. Readiness without clutter.</p>
+              </div>
             </article>
 
+            <!-- 5) Night Oil (your flask + mug image) -->
             <article class="prov-card">
-              <span class="pill">The Armory</span>
-              <h3>The Daily Carry</h3>
-              <p>Only what earns its place. Readiness without clutter.</p>
+              <div class="prov-media">
+                <img
+                  src="assets/6e82575e-f177-4d41-a9c4-bf994067873a.png"
+                  alt="The Night Oil"
+                  loading="lazy"
+                />
+              </div>
+              <div class="prov-body">
+                <span class="pill">The Reserve</span>
+                <h3>The Night Oil</h3>
+                <p>Heat held in silence. The evening ritual that sustains the next day’s discipline.</p>
+              </div>
             </article>
 
+            <!-- 6) Provision 6 (your jacket image) -->
             <article class="prov-card">
-              <span class="pill">The Workshop</span>
-              <h3>The Ledger Case</h3>
-              <p>Order, record, and accountability—what must not be forgotten.</p>
+              <div class="prov-media">
+                <img
+                  src="assets/03249d8e-bf08-4a98-8830-44c9f31d77c8.png"
+                  alt="The Threshold Coat"
+                  loading="lazy"
+                />
+              </div>
+              <div class="prov-body">
+                <span class="pill">The Foundation</span>
+                <h3>The Threshold Coat</h3>
+                <p>Worn at the boundary between comfort and responsibility.</p>
+              </div>
             </article>
 
-            <article class="prov-card">
-              <span class="pill">The Foundation</span>
-              <h3>The Threshold Coat</h3>
-              <p>Worn at the boundary between comfort and responsibility.</p>
-            </article>
+            <!-- 7) If you later add the 7th image, duplicate a card and change only src + title. -->
           </div>
         </div>
       </section>
 
-      <!-- CATALOG MAP (30) -->
+      <!-- Symbolic Catalog Map (30) -->
       <section class="catalog-map" aria-label="Symbolic Catalog Map">
         <div class="panel-inner">
           <div class="eyebrow">Catalog Map</div>
@@ -609,20 +615,8 @@
         </div>
       </section>
 
-      <!-- HALLS -->
+      <!-- The Four Halls -->
       <div class="panel-inner" id="halls">
-        <div class="eyebrow">The Halls</div>
-        <h2>Four Categories of Curation</h2>
-
-        <!-- HALLS IMAGE -->
-        <div class="media-block" aria-label="Product categories image">
-          <img src="assets/132031b9-0a35-40e8-ae96-25531a8e7790.png" alt="Product categories: The Foundation, The Workshop, The Armory, The Reserve" />
-          <div class="media-caption">
-            <strong>The Four Halls</strong><br/>
-            Foundation. Workshop. Armory. Reserve. Each hall exists to reduce noise and increase utility.
-          </div>
-        </div>
-
         <div class="grid">
           <div class="card">
             <span class="pill">The Foundation</span>
@@ -647,21 +641,25 @@
         </div>
       </div>
 
-      <!-- FEATURED -->
+      <!-- Featured Provision (WITH IMAGE) -->
       <section class="featured" id="featured">
         <div class="panel-inner">
           <div class="eyebrow">Featured Provision</div>
-          <h3>The Foundation Walker</h3>
 
-          <!-- FEATURED IMAGE -->
-          <div class="media-block" aria-label="Featured Foundation Walker image">
-            <img src="assets/2e264f35-9859-459e-bb7a-f1967952463e.png" alt="The Foundation Walker — product poster" />
-            <div class="media-caption">
-              <strong>The Foundation Walker</strong><br/>
-              For the individual who builds their day from the ground up. Crafted for endurance and disciplined use.
-            </div>
+          <div class="img-frame" style="margin-top:14px;">
+            <img
+              src="assets/9c08bcb7-e3eb-4482-8b35-fd79670b6a76.png"
+              alt="Featured: The Foundation Walker"
+              loading="lazy"
+            />
+            <div class="img-caption">STIGWEARD’S PROVISIONS</div>
           </div>
 
+          <h3 style="margin-top:16px;">The Foundation Walker</h3>
+          <p style="margin:10px 0 0; color:#424242; line-height:1.7; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;">
+            For the individual who builds their day from the ground up. Crafted for endurance and disciplined use.
+            This is not footwear for display. It is a tool for presence.
+          </p>
           <div class="meta">
             <span class="tag">Standard: Endurance</span>
             <span class="tag">Standard: Restraint</span>
@@ -669,7 +667,6 @@
           </div>
         </div>
 
-        <!-- ACCESS -->
         <div class="founder" id="access">
           <div class="eyebrow">Provision Access</div>
           <h2>Begin with understanding</h2>
